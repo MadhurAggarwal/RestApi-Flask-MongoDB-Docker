@@ -57,7 +57,22 @@ This way, the ports can be changed as per requirements.
 # Rest Api Mapping:
 The following APIs are mapped to "localhost:5001/" port:
 
-## 1. GET Mapping "localhost:5001/users"
+## 0. (default) "localhost:5001/"
+```
+This is a default port, to check if the app is running or not. On successfull running the app, the port gets a default output with status = 'up', explaing different routes available. The default output is:
+{
+    "Status": "UP",
+    "Message": "This Is HomePage of RestAPI Application.",
+    "Routes": {
+        "POST-new_user": "/users",
+        "GET-all_users": "/users",
+        "GET-unique_user": "/users/<id>",
+        "PUT-unique_user": "/users/<id>",
+        "DELETE-unique_user": "/users/<id>"
+    }
+}
+```
+## 1. GET "localhost:5001/users"
 ```
 ```
 ## 2. GET "localhost:5001/users/{userId}"
