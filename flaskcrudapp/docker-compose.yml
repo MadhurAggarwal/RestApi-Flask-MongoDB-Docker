@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    mymongo_1:
+        image: "mongo"
+        ports:
+            - "27017:27017"
+    
+    myreader:
+        build: .
+        depends_on: 
+            - mymongo_1
+        ports:
+            - "5001:5001"
