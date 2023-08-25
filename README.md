@@ -4,6 +4,11 @@
 This is an Assignment for CoRider.
 
 I've used Python and Flask to create Rest APIs which connect to MongoDB Database. The Entire App is then Containerized using Docker.
+The App stores username, email and passwords of each user alongwith a unique userID.
+
+In this Flask app, bson.objectid is used for providing a unique ObjectID.
+The Library werkzeug is used for hashing the passwords
+The Library pymongo is used for connecting the python app to MongoDB database
 
 # To Run
 Ensure you have Docker (and pip) Installed. Make Sure That MongoDB is available and running on default MongoDB port (localhost:27017). 
@@ -74,7 +79,29 @@ This is a default port, to check if the app is running or not. On successfull ru
 ```
 ## 1. GET "localhost:5001/users"
 ```
+This API endpoint returns a list of all the users stored in the database.
+If There is no user data stored in DB, it returns an empty list []
+Otherwise, it returns the users with 'id', 'username', 'email', and 'password' fields.
+(The passwords are hashed for security, and can even be excluded from output if required)
+
+Here's a Sample output for this:
+
 ```
-## 2. GET "localhost:5001/users/{userId}"
+## 2. GET "localhost:5001/users/<Id>"
 ```
 ```
+## 3. POST "localhost:5001/users"
+```
+```
+## 4. PUT "localhost:5001/users/<Id>"
+```
+```
+## 5. DELETE "localhost:5001/users/<Id>"
+```
+```
+
+There is an additional API endpoint I've created, for validating the password (to ensure that hash functions are working appropriately):
+## 6. GET "localhost:5001/checkpassword/<Id>"
+```
+```
+
