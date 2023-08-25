@@ -89,6 +89,25 @@ Otherwise, it returns the users with 'id', 'username', 'email', and 'password' f
 (The passwords are hashed for security, and can even be excluded from output if required)
 
 Here's a Sample output for this:
+[
+    {
+        "_id": {
+            "$oid": "64e8e937d28f01e6bdde1657"
+        },
+        "name": "Madhur Aggarwal",
+        "email": "madhuraggarwal@gmail.com",
+        "password": "pbkdf2:sha256:600000$dGKX6B3DGOcMooKV$585123bbe75b2adb1fbc7f762097cce22d88422c8103855c6836524c28dcc013"
+    },
+    {
+        "_id": {
+            "$oid": "64e8e984d28f01e6bdde1659"
+        },
+        "name": "Harry Potter",
+        "email": "harrypotter@gmail.com",
+        ....
+    }
+....
+]
 
 ```
 ## 2. GET "localhost:5001/users/<Id>"
@@ -97,7 +116,17 @@ This API endpoint first checks if the ID id valid, and finds the user with speci
 Then, it returns the user with the specified userID.
 
 The Sample output for this Endpoint is:
-
+Endpoint:
+    "localhost:5001/users/64e8e937d28f01e6bdde1657"
+Output:
+{
+    "_id": {
+        "$oid": "64e8e937d28f01e6bdde1657"
+    },
+    "name": "Madhur Aggarwal",
+    "email": "madhuraggarwal@gmail.com",
+    "password": "pbkdf2:sha256:600000$dGKX6B3DGOcMooKV$585123bbe75b2adb1fbc7f762097cce22d88422c8103855c6836524c28dcc013"
+}
 ```
 ## 3. POST "localhost:5001/users"
 ```
@@ -106,20 +135,61 @@ The name, email and password of the user are passed as raw (json) format in the 
 The App generates a unique ObjectID and assigns it to the new user & stores in the DB.
 
 The Output for this API Endpoint is of the form:
+Sample message body:
+{
+    "name": "Harry Potter",
+    "email": "harrypotter@gmail.com",
+    "password": "platform934"
+}
 
+Sample Output:
+{
+    "id": "64e8e984d28f01e6bdde1659",
+    "message": "User Added Successfully"
+}
+The User Has Now been Added to the database.
 ```
 ## 4. PUT "localhost:5001/users/<Id>"
 ```
 This API Endpoint updates the specified userID to the new values of name, email, password
 which are passed as raw json format in the request body.
-The ouput is the updated user & response, for example:
 
+The ouput is the updated user & response, for example:
+Endpoint:
+    localhost:5001/users/64e8e937d28f01e6bdde1657
+Input Body:
+{
+    "name": "Random Person",
+    "email": "randomperson@gmail.com",
+    "password": "RandomPassword"
+}
+Output:
+{
+    "message": "User Updated"
+}
 ```
 ## 5. DELETE "localhost:5001/users/<Id>"
 ```
 This API Endpoint takes in a userID, validates it and then deletes the user with specified ID
 from the DB. For example:
+Endpoint:
+    localhost:5001/users/64e8e984d28f01e6bdde1659
+Output:
+{
+    "message": "Successfully Deleted"
+}
 
+If we try to delete it again, it would return:
+{
+    "message": "No Such User Found"
+}
+
+Incase the userId is invalid, we get the error:
+Endpoint: localhost:5001/users/1234
+Error:
+{
+    "message": "Invalid ObjectId"
+}
 ```
 
 There is an additional API endpoint I've created, for validating the password (to ensure that hash functions are working appropriately):
@@ -129,5 +199,24 @@ This API endpoint takes in the userID as path and password specified in raw json
 Then, it attempts to validate the password from the hashed value stored in the DB at the specified ID.
 For Example:
 
+Endpoint:
+    localhost:5001/checkpassword/64e8e984d28f01e6bdde1659
+
+Message Body:
+{
+    "password": "platform934"
+}
+Output:
+{
+    "message": "Correct Password"
+}
+
+Trying this with an incorrect password, we get
+{
+    "password": "somewrongpassword"
+}
+{
+    "message": "Incorrect Password"
+}
 ```
 
