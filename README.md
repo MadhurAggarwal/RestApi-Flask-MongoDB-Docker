@@ -3,7 +3,7 @@
 # About
 This is an Assignment for CoRider.
 
-I've used Python and Flask to create Rest APIs which connect to MongoDB Database. The Entire App is then Containerised using Docker.
+I've used Python and Flask to create Rest APIs which connect to MongoDB Database. The Entire App is then Containerized using Docker.
 
 # To Run
 Ensure you have Docker (and pip) Installed. Make Sure That MongoDB is available and running on default MongoDB port (localhost:27017). 
