@@ -19,9 +19,9 @@ database_data = {
 Specify the database and the collection inside that database the app will connect to. Create a new Database & Collection (or use some already existing one) in MongoDB for this app as per your choice. Update the name of the database & collection in this file.
 
  Finally, Navigate The Command Prompt Inside the "flaskcrudapp" Folder, and then Run the Command: 
-
+```
 docker-compose up
-
+```
 The dependencies specified in "requirements.txt" will automatically install. After the dependencies are installed, the app would connect to mongoDB from port 27017 and would start running on port 5001.
 
 # Ports configurations
