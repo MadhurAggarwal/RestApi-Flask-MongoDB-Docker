@@ -64,7 +64,11 @@ The following APIs are mapped to "localhost:5001/" port:
 
 ## 0. (default) "localhost:5001/"
 ```
-This is a default port, to check if the app is running or not. On successfull running the app, the port gets a default output with status = 'up', explaing different routes available. The default output is:
+This is a default port, to check if the app is running or not.
+On successfully running the app, the port gets a default output.
+with status = 'up' and a message explaing different routes available.
+
+The default output is:
 {
     "Status": "UP",
     "Message": "This Is HomePage of RestAPI Application.",
