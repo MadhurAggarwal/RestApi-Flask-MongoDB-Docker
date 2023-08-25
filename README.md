@@ -93,19 +93,41 @@ Here's a Sample output for this:
 ```
 ## 2. GET "localhost:5001/users/<Id>"
 ```
+This API endpoint first checks if the ID id valid, and finds the user with specified ID, if any.
+Then, it returns the user with the specified userID.
+
+The Sample output for this Endpoint is:
+
 ```
 ## 3. POST "localhost:5001/users"
 ```
+This API endpoint adds a new user to the database.
+The name, email and password of the user are passed as raw (json) format in the request
+The App generates a unique ObjectID and assigns it to the new user & stores in the DB.
+
+The Output for this API Endpoint is of the form:
+
 ```
 ## 4. PUT "localhost:5001/users/<Id>"
 ```
+This API Endpoint updates the specified userID to the new values of name, email, password
+which are passed as raw json format in the request body.
+The ouput is the updated user & response, for example:
+
 ```
 ## 5. DELETE "localhost:5001/users/<Id>"
 ```
+This API Endpoint takes in a userID, validates it and then deletes the user with specified ID
+from the DB. For example:
+
 ```
 
 There is an additional API endpoint I've created, for validating the password (to ensure that hash functions are working appropriately):
 ## 6. GET "localhost:5001/checkpassword/<Id>"
 ```
+This API endpoint takes in the userID as path and password specified in raw json in the request body.
+Then, it attempts to validate the password from the hashed value stored in the DB at the specified ID.
+For Example:
+
 ```
 
