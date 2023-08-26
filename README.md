@@ -108,10 +108,12 @@ Here's a Sample output for this:
     }
 ....
 ]
+
 ```
 Here's a screenshot for this output:
 
 <img width="600" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/8e45e0af-7fa0-494e-9d2f-fcf43c8a1bf0">
+
 ## 2. GET "localhost:5001/users/<Id>"
 ```
 This API endpoint first checks if the ID id valid, and finds the user with specified ID, if any.
