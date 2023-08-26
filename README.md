@@ -149,6 +149,8 @@ Sample Output:
 }
 The User Has Now been Added to the database.
 ```
+<img width="617" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/eebd49df-c13c-43ca-8e1b-08f3c8e632a0">
+
 ## 4. PUT "localhost:5001/users/<Id>"
 ```
 This API Endpoint updates the specified userID to the new values of name, email, password
