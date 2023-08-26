@@ -29,6 +29,9 @@ docker-compose up
 ```
 The dependencies specified in "requirements.txt" will automatically install. After the dependencies are installed, the app would connect to mongoDB from port 27017 and would start running on port 5001.
 
+<img width="899" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/1fc02a77-13ee-4bff-a7e4-280bda7dcf4e">
+
+
 # Ports configurations
 To change the port on which mongoDB is running, make changes to the "flaskcrudapp/docker-compose.yml" file:
 ```
@@ -132,6 +135,11 @@ Output:
     "password": "pbkdf2:sha256:600000$dGKX6B3DGOcMooKV$585123bbe75b2adb1fbc7f762097cce22d88422c8103855c6836524c28dcc013"
 }
 ```
+
+The Output on Postman:
+
+<img width="602" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/08ecf92c-c1e8-41d3-b624-8ec91d1ef09b">
+
 ## 3. POST "localhost:5001/users"
 ```
 This API endpoint adds a new user to the database.
@@ -179,6 +187,11 @@ Output:
     "message": "User Updated"
 }
 ```
+
+Postman Output for this API Endpoint:
+
+<img width="608" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/76232c73-8935-40a3-9d44-2c68013fc927">
+
 ## 5. DELETE "localhost:5001/users/<Id>"
 ```
 This API Endpoint takes in a userID, validates it and then deletes the user with specified ID
@@ -202,6 +215,14 @@ Error:
     "message": "Invalid ObjectId"
 }
 ```
+
+Ouput on Postman:
+
+<img width="606" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/39d1f1a8-2b0e-4b47-b74b-f4d1a1fa1810">
+
+
+<img width="603" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/03bab0db-8336-4f36-b63e-21a48053bc0e">
+
 
 There is an additional API endpoint I've created, for validating the password (to ensure that hash functions are working appropriately):
 ## 6. GET "localhost:5001/checkpassword/<Id>"
@@ -230,4 +251,11 @@ Trying this with an incorrect password, we get
     "message": "Incorrect Password"
 }
 ```
+
+Postman Output for this API Endpoint:
+
+<img width="599" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/27e4b53c-08c4-4deb-9680-10d8e4ca59fd">
+
+
+<img width="613" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/a7d532e7-3e86-4e09-a40c-60b106f3afe5">
 
