@@ -108,12 +108,10 @@ Here's a Sample output for this:
     }
 ....
 ]
-
+```
 Here's a screenshot for this output:
 
 <img width="600" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/8e45e0af-7fa0-494e-9d2f-fcf43c8a1bf0">
-```
-
 ## 2. GET "localhost:5001/users/<Id>"
 ```
 This API endpoint first checks if the ID id valid, and finds the user with specified ID, if any.
@@ -153,7 +151,10 @@ Sample Output:
 }
 The User Has Now been Added to the database.
 ```
+Using Postman, the output looks like this:
+
 <img width="602" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/96806dad-8461-4b61-a313-01f6bfbb8b2e">
+
 
 <img width="617" alt="image" src="https://github.com/MadhurAggarwal/RestApi-Flask-MongoDB-Docker/assets/113705764/eebd49df-c13c-43ca-8e1b-08f3c8e632a0">
 
