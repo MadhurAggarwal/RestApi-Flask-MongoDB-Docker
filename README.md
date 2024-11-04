@@ -1,7 +1,7 @@
 # RestApi-Flask-MongoDB-Docker
 
 # About
-This is an Assignment for CoRider.
+This is an Assignment for CoRider, Made By Madhur Aggarwal.
 
 I've used Python and Flask to create Rest APIs which connect to MongoDB Database. The Entire App is then Containerized using Docker.
 The App stores username, email and passwords of each user alongwith a unique userID.
